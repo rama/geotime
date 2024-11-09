@@ -29,9 +29,9 @@ function draw() {
 
 	// Draw the clock background
 	noStroke();
-	fill(244, 122, 158);
+	fill(244, 122, 158, 100.0);
 	ellipse(0, 0, clockDiameter + 25, clockDiameter + 25);
-	fill(237, 34, 93);
+	fill(237, 34, 93, 100.0);
 	ellipse(0, 0, clockDiameter, clockDiameter);
 
 	// Calculate angle for each hand
@@ -71,7 +71,12 @@ function draw() {
 	}
 	pop();
 
-	//background(0);
+  drawEarth();
+}
+
+function drawEarth() {
+  //background(0);
+	// translate(0, 0, -75);
 	noStroke();
 	rotateY(frameCount * 0.01);
 	texture(img);
