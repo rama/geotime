@@ -17,16 +17,20 @@ function setup() {
 	hoursRadius = radius * 0.5;
 	clockDiameter = radius * 1.7;
 
-	describe("Functioning pink clock on a grey background.");
+	describe("Spinning earth embedded in a clock.");
 }
 
 function draw() {
 	background(230);
-	let clockWidth = 710;
 	// Move origin to center of canvas
-	// translate(width / 2, height / 2);
 	translate(0, 0);
 
+	orbitControl();
+	drawEarth();
+	drawClock();
+}
+
+function drawClock() {
 	// Draw the clock background
 	noStroke();
 	fill(244, 122, 158, 100.0);
@@ -70,15 +74,11 @@ function draw() {
 		rotate(6);
 	}
 	pop();
-
-  drawEarth();
 }
 
 function drawEarth() {
-  //background(0);
-	// translate(0, 0, -75);
 	noStroke();
-	rotateY(frameCount * 0.01);
+	rotateY(frameCount * 0.1);
 	texture(img);
 	sphere(100);
 }
@@ -86,9 +86,3 @@ function drawEarth() {
 function preload() {
 	img = loadImage("Globe.jpg");
 }
-
-// function setup() {
-// 	createCanvas(400, 400, WEBGL);
-// 	background(0)
-// 	noStroke();
-// }
