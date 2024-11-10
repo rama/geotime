@@ -36,7 +36,8 @@ function drawClock() {
 	fill(244, 122, 158, 100.0);
 	ellipse(0, 0, clockDiameter + 25, clockDiameter + 25);
 	fill(237, 34, 93, 100.0);
-	ellipse(0, 0, clockDiameter, clockDiameter);
+	// Uncomment below for "wormhole" effect
+	// ellipse(0, 0, clockDiameter, clockDiameter);
 
 	// Calculate angle for each hand
 	let secondAngle = map(second(), 0, 60, 0, 360);
